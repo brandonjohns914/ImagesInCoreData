@@ -21,5 +21,13 @@ extension MyImage {
         id ?? ""
     }
     
+    var uiImage: UIImage {
+        
+        if !imageID.isEmpty, let image = FileManager().retrieveImage(with: imageID) {
+                return image
+        } else {
+            return UIImage(systemName: "photo")!
+        }
+    }
     
 }

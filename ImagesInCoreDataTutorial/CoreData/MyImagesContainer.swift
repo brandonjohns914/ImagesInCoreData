@@ -12,7 +12,7 @@ class MyImagesContainer {
     let container: NSPersistentContainer
     
     init() {
-        container = NSPersistentContainer(name: "MyImagesDataModel")
+        container = NSPersistentContainer(name: "ImagesDataModel")
         container.loadPersistentStores { _, error in
          
             if let error {

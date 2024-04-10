@@ -12,8 +12,11 @@ struct ImagesInCoreDataTutorialApp: App {
   
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MyImagesGridView()
                 .environment(\.managedObjectContext, MyImagesContainer().container.viewContext)
+                .onAppear {
+                    print(URL.documentsDirectory.path)
+                }
         }
     }
 }

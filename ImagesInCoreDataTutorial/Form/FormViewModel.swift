@@ -32,7 +32,7 @@ class FormViewModel: ObservableObject {
     init(_ myImage: MyImage) {
         name = myImage.nameView
         id = myImage.imageID
-        // systemName == SF symbols
-        uiImage = UIImage(systemName: "photo")!
+        uiImage = myImage.uiImage
+        
     }
 }
