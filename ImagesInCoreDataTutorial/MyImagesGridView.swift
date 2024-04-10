@@ -23,21 +23,18 @@ struct MyImagesGridView: View {
                     ScrollView {
                         LazyVGrid(columns: columns, spacing: 20) {
                             ForEach(myImages) { myImage in
-                                
-                                VStack {
-                                    Image(uiImage: myImage.uiImage)
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 100, height: 100)
-                                        .clipped()
-                                        .shadow(radius: 5.0)
-                                    Text(myImage.nameView)
-                                }
-        
                                 Button {
                                     formType = .update(MyImage)
                                 } label: {
-                                   
+                                    VStack {
+                                        Image(uiImage: myImage.uiImage)
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 100, height: 100)
+                                            .clipped()
+                                            .shadow(radius: 5.0)
+                                        Text(myImage.nameView)
+                                    }
                                 }
                             }
                         }
